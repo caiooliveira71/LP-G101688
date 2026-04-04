@@ -41,12 +41,10 @@ if pagamento == 3:
 print("\n----RESUTADO----")
 
 for i in pedido:
-    print("exame escolhido: "{nome[indice]})
+    print(f"exame escolhido: {nome[indice]}")
+    print(f"codigo usado: {codigo[indice]}")
 
-for i in pedido:
-    print("codigo escolhido: "{codigo[indice]})
-
-print("Valor total sem desconto: "{soma_valor})
-print("For de pagamento escolhida: "{pagamento})
-print("Valor do desconto ou acrescimo: "{desconto})
-print("Valor final: "{final})
+print(f"Valor total sem desconto: {soma_valor}")
+print(f"For de pagamento escolhida: {pagamento}")
+print(f"Valor do desconto ou acrescimo: "f"codigo escolhido{desconto}")
+print(f"Valor final: {final}")
