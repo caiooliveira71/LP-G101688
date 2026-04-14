@@ -8,7 +8,7 @@ impar = 0
 QUANTIDADE = 6
 
 for i in range(QUANTIDADE):
-    num = int(input("digite um numero: "))
+    num = int(input(f"digite o {i} numero: "))
     vetor.append(num)
     
     if num % 2 == 0:
