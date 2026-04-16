@@ -59,7 +59,7 @@ def media_impares(a):
         else:
             return 0
         
-
+numeros.sort(reverse = True
 media_geral = media(num)
 media_pares = media_pares(num)
 media_impares = media_impares(num)
@@ -75,7 +75,4 @@ print(f"Menor numero: {menor_numero}")
 print(f"Media dos pares: {media_pares}")
 print(f"Media dos impares: {media_impares}")
 print(f"Media Geral: {media_geral}")
-
-
-
-
+print(numeoros)
