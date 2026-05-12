@@ -1,59 +1,128 @@
-/* RESET DE CONFIGURAÇÕES DO NAVEGADOR */
-* {
+.index {
+    background-color: blueviolet;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    border-radius: 0;
+    background-image: url(assets/cyberpunk-2077.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
 
-body {
-    background-color: khaki;
-    background-image: url(assets/fundo_page2.jpg);
+img {
+    width: 300px;
+    border-radius: 10px;
 }
 
-h1 {
-    justify-content: ;
-    background-color: purple;
-    margin: 40px auto;
-    padding: 2px;
-    border-radius: 30px;
-    height: 40px;
-    width: fit-content;
+.page2 {
+    background-color: blueviolet;
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    background-image: url(assets/thelast.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.page3 {
+    background-color: blueviolet;
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    background-image: url(assets/unity.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+h1.index {
+    text-align: center;
+    color: yellow;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+h1.page2 {
+    text-align: center;
+    color: brown;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+h1.page3 {
+    text-align: center;
+    color: blue;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h2.index {
+    text-align: center;
+    color: purple;
     font-family: Arial, Helvetica, sans-serif;
-    color: black;
-    text-align: center;
-}
-h2 {
-    text-align: center;
-    margin: 30px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
-    color: black;
 }
 
-h3 {
+h2.page2 {
     text-align: center;
-    margin: 30px;
-    font-family: monospace;
-    color: black;
+    color: green;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-p {
+h2.page3 {
     text-align: center;
-    color: black;
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-a {
+button.index {
     text-align: center;
-    display: block;
-    margin: 10px;
-    color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-button {
+    color: rgb(231, 30, 215);
     display: block;
     padding: 10px 15px;
     border-radius: 10px;
     cursor: pointer;
     margin: 10px auto;
     background-color: blueviolet;
+}
+
+button.page2 {
+    text-align: center;
+    color: gray;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px auto;
+    background-color: purple;
+}
+
+button.page2 {
+    text-align: center;
+    color: grey;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px auto;
+    background-color: greenyellow;
+}
+
+button.page3 {
+    text-align: center;
+    color: white;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px auto;
+    background-color: red;
+}
+
+h3 {
+    text-align: center;
+    color: red;
+    font-size: 30px;
 }
