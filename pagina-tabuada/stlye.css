@@ -1,0 +1,170 @@
+/* ==========================================================================
+   1. CONFIGURAÇÕES GERAIS & TEMA F1 (DESIGN SYSTEM)
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;600;700&display=swap');
+
+:root {
+    /* Cores Oficiais das Pistas */
+    --f1-red: #e10600;            /* Vermelho oficial F1 */
+    --f1-black: #15151e;          /* Grafite escuro / Fibra de carbono */
+    --f1-dark-gray: #1f1f2a;     /* Fundo dos painéis */
+    --f1-light-gray: #949498;    /* Textos secundários */
+    --f1-white: #ffffff;
+    
+    /* Neon de Telemetria */
+    --neon-green: #00ff66;        /* Status/Sucesso (Setor verde) */
+    
+    /* Fontes */
+    --font-display: 'Orbitron', sans-serif; /* Estilo Placar Eletrônico */
+    --font-body: 'Rajdhani', sans-serif;    /* Técnico e Leve */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--f1-black);
+    color: var(--f1-white);
+    font-family: var(--font-body);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    letter-spacing: 0.5px;
+    
+    /* Detalhe de fundo dinâmico simulando a linha de chegada */
+    background-image: 
+        linear-gradient(45deg, #1a1a24 25%, transparent 25%), 
+        linear-gradient(-45deg, #1a1a24 25%, transparent 25%), 
+        linear-gradient(45deg, transparent 75%, #1a1a24 75%), 
+        linear-gradient(-45deg, transparent 75%, #1a1a24 75%);
+    background-size: 40px 40px;
+    background-position: 0 0, 0 20px, 20px -20px, -20px 0;
+}
+
+/* ==========================================================================
+   2. TIPOGRAFIA & TÍTULO (O PLACAR)
+   ========================================================================== */
+h1 {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--f1-white);
+    text-align: center;
+    margin-bottom: 30px;
+    border-left: 6px solid var(--f1-red);
+    padding-left: 15px;
+    text-shadow: 2px 2px 0px rgba(225, 6, 0, 0.2);
+}
+
+/* ==========================================================================
+   3. FORMULÁRIO DE ENTRADA (BOX DESENHADO PARA PERFORMANCE)
+   ========================================================================== */
+label {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: var(--f1-light-gray);
+    margin-bottom: 8px;
+    display: block;
+    width: 100%;
+    max-width: 400px;
+}
+
+input[type="number"] {
+    width: 100%;
+    max-width: 400px;
+    background-color: var(--f1-dark-gray);
+    border: 2px solid #38384f;
+    border-radius: 0; /* Visual agressivo sem cantos arredondados */
+    padding: 14px 16px;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--f1-white);
+    margin-bottom: 16px;
+    transition: all 0.2s ease-in-out;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: var(--f1-red);
+    box-shadow: 0 0 10px rgba(225, 6, 0, 0.3);
+}
+
+/* Remove as setas padrões do input number para manter o design limpo */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* ==========================================================================
+   4. BOTÃO (DRS ATIVADO)
+   ========================================================================== */
+#btnGerar {
+    width: 100%;
+    max-width: 400px;
+    background-color: var(--f1-red);
+    color: var(--f1-white);
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 16px;
+    border: none;
+    clip-path: polygon(0 0, 95% 0, 100% 33%, 100% 100%, 5% 100%, 0 66%); /* Corte aerodinâmico nos cantos */
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 0px #990400;
+    margin-bottom: 30px;
+}
+
+#btnGerar:hover {
+    background-color: #ff0b05;
+    transform: translateY(2px);
+    box-shadow: 0 2px 0px #990400;
+    cursor: pointer;
+}
+
+#btnGerar:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+/* ==========================================================================
+   5. PAINEL DE RESULTADOS (TELEMETRIA DA TABUADA)
+   ========================================================================== */
+#resultadoTabuada {
+    width: 100%;
+    max-width: 400px;
+    background-color: var(--f1-dark-gray);
+    border-top: 4px solid var(--f1-red);
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Estilização para quando seu script injetar as linhas da tabuada */
+/* Dica de ouro: No seu script.js, coloque cada linha dentro de uma div com a classe 'linha-telemetria' */
+.linha-telemetria {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 8px;
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    border-bottom: 1px solid #2a2a3a;
+}
+
+.linha-telemetria:last-child {
+    border-bottom: none;
+}
+
+.linha-telemetria:hover {
+    background-color: rgba(225, 6, 0, 0.05);
+    color: var(--neon-green);
+}
