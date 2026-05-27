@@ -1,0 +1,440 @@
+/* =========================================
+   CYBERPUNK 2077 THEME
+   STYLE.CSS
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;800&family=Rajdhani:wght@300;400;500;600&display=swap');
+
+/* =========================================
+   RESET
+========================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* =========================================
+   VARIABLES
+========================================= */
+
+:root{
+
+    --yellow:#f7d117;
+    --cyan:#00f0ff;
+    --pink:#ff007f;
+    --purple:#6f00ff;
+
+    --dark:#050816;
+    --dark-2:#0b1023;
+
+    --text:#e8f7ff;
+    --text-soft:#9fb7c7;
+
+    --glass:rgba(8,12,25,0.72);
+
+    --shadow:rgba(0,0,0,0.8);
+}
+
+/* =========================================
+   BODY
+========================================= */
+
+body.index{
+
+    min-height:100vh;
+
+    font-family:'Rajdhani', sans-serif;
+
+    color:var(--text);
+
+    overflow-x:hidden;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    padding:40px;
+
+    position:relative;
+
+    /* =========================================
+       BACKGROUND CYBERPUNK 2077
+    ========================================= */
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.60),
+            rgba(0,0,0,0.88)
+        ),
+
+        url(assets/LA3m99.png);
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+}
+
+/* =========================================
+   NEON ATMOSPHERE
+========================================= */
+
+body.index::before{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+
+    radial-gradient(
+        circle at top left,
+        rgba(0,240,255,0.18),
+        transparent 28%
+    ),
+
+    radial-gradient(
+        circle at bottom right,
+        rgba(255,0,127,0.18),
+        transparent 30%
+    ),
+
+    radial-gradient(
+        circle at center,
+        rgba(247,209,23,0.08),
+        transparent 40%
+    );
+
+    pointer-events:none;
+}
+
+/* =========================================
+   SCANLINES
+========================================= */
+
+body.index::after{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            rgba(255,255,255,0.02),
+            rgba(255,255,255,0.02) 1px,
+            transparent 1px,
+            transparent 3px
+        );
+
+    opacity:.25;
+
+    pointer-events:none;
+}
+
+/* =========================================
+   ELEMENTS
+========================================= */
+
+body.index > *{
+    position:relative;
+    z-index:2;
+}
+
+/* =========================================
+   TITLE
+========================================= */
+
+h1{
+
+    font-family:'Orbitron', sans-serif;
+
+    font-size:clamp(3rem, 8vw, 6rem);
+
+    text-transform:uppercase;
+
+    letter-spacing:6px;
+
+    margin-bottom:30px;
+
+    color:var(--yellow);
+
+    text-shadow:
+        0 0 10px rgba(247,209,23,0.5),
+        0 0 25px rgba(247,209,23,0.3),
+        0 0 45px rgba(247,209,23,0.15);
+
+    animation:glitchFade 1s ease;
+}
+
+/* =========================================
+   PARAGRAPH
+========================================= */
+
+p{
+
+    max-width:900px;
+
+    line-height:2;
+
+    font-size:1.2rem;
+
+    text-align:center;
+
+    color:var(--text-soft);
+
+    padding:35px;
+
+    background:var(--glass);
+
+    border:
+        1px solid rgba(0,240,255,0.25);
+
+    backdrop-filter:blur(8px);
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 0 20px rgba(0,240,255,0.08),
+        0 15px 40px rgba(0,0,0,0.5);
+
+    animation:fadeUp 1.4s ease;
+}
+
+/* neon border */
+
+p::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--cyan),
+            transparent
+        );
+}
+
+/* =========================================
+   BUTTON / LINK
+========================================= */
+
+a{
+
+    margin-top:45px;
+
+    text-decoration:none;
+
+    font-family:'Orbitron', sans-serif;
+
+    color:var(--yellow);
+
+    letter-spacing:3px;
+
+    padding:16px 42px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(0,240,255,0.12),
+            rgba(111,0,255,0.18)
+        );
+
+    border:
+        1px solid rgba(0,240,255,0.4);
+
+    clip-path:polygon(
+        10px 0,
+        100% 0,
+        100% calc(100% - 10px),
+        calc(100% - 10px) 100%,
+        0 100%,
+        0 10px
+    );
+
+    transition:.35s ease;
+
+    box-shadow:
+        0 0 20px rgba(0,240,255,0.12);
+}
+
+/* animated shine */
+
+a::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-120%;
+
+    width:100%;
+    height:100%;
+
+    background:
+        linear-gradient(
+            120deg,
+            transparent,
+            rgba(255,255,255,0.18),
+            transparent
+        );
+
+    transition:.7s;
+}
+
+a:hover::before{
+    left:120%;
+}
+
+a:hover{
+
+    transform:translateY(-5px);
+
+    color:white;
+
+    border-color:var(--pink);
+
+    box-shadow:
+        0 0 15px rgba(255,0,127,0.35),
+        0 0 35px rgba(0,240,255,0.2);
+}
+
+/* =========================================
+   GLITCH EFFECT
+========================================= */
+
+h1:hover{
+    animation:glitch .4s linear infinite;
+}
+
+@keyframes glitch{
+
+    0%{
+        transform:translate(0);
+    }
+
+    20%{
+        transform:translate(-2px,2px);
+    }
+
+    40%{
+        transform:translate(-2px,-2px);
+    }
+
+    60%{
+        transform:translate(2px,2px);
+    }
+
+    80%{
+        transform:translate(2px,-2px);
+    }
+
+    100%{
+        transform:translate(0);
+    }
+}
+
+/* =========================================
+   FADE
+========================================= */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes glitchFade{
+
+    from{
+        opacity:0;
+        transform:translateY(25px) skewX(10deg);
+        filter:blur(10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) skewX(0);
+        filter:blur(0);
+    }
+}
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#070b16;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:
+        linear-gradient(
+            to bottom,
+            var(--cyan),
+            var(--pink)
+        );
+
+    border-radius:20px;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:768px){
+
+    body.index{
+        padding:25px;
+    }
+
+    h1{
+        font-size:3rem;
+        text-align:center;
+    }
+
+    p{
+        font-size:1rem;
+        padding:25px;
+    }
+
+    a{
+        width:100%;
+        text-align:center;
+    }
+
+}
